@@ -90,7 +90,7 @@ export class ProductListComponent implements OnInit {
                                                .subscribe(this.processResult());
   }
   processResult() {
-    return (data: { _embedded: { products: Product[]; }; page: { number: number; size: number; totalElements: number; }; }) => {
+    return (data: any) => {
       this.products = data._embedded.products;
       this.thePageNumber = data.page.number + 1;      // ngb starts from 1, sprng boot starts from 0
       this.thePageSize = data.page.size;
