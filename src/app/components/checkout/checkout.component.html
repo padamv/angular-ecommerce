@@ -139,6 +139,67 @@
                     </div>
                 </div>
 
+            <!-- Credit Card -->
+            <div formGroupName="creditCard" class="form-area">
+                <h3>Credit Card</h3>
+
+                <div class="row">
+                    <div class="col-md-2"><label for="cardType">Card Type</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                           <select formControlName="cardType" id="cardType">
+                                <option >Visa</option>
+                                <option >Mastercard</option>
+                           </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="nameOnCard">Name on Card</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                            <input formControlName="nameOnCard" type="text" id="nameOnCard">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="cardNumber">Card Number</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                            <input formControlName="cardNumber" type="text" id="cardNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="securityCode">Security Code</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                            <input formControlName="securityCode" type="text" id="securityCode">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="expirationMonth">Expiration Month</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                           <select formControlName="expirationMonth" id="expirationMonth">
+                                <option >TO DO</option>
+                           </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="expirationYear">Expiration Year</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                           <select formControlName="expirationYear" id="expirationYear">
+                                <option >TO DO</option>
+                           </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
                 <!-- submit button -->
                 <div class="text-center">
                     <button type="submit" class="btn btn-info">Purchase</button>
