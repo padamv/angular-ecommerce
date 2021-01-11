@@ -1,3 +1,4 @@
+import { temporaryDeclaration } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { CartItem } from '../common/cart-item';
@@ -64,9 +65,35 @@ export class CartService {
     for (let tempCartItem of this.cartItems) {
       const subTotalPrice = tempCartItem.unitPrice * tempCartItem.quantity;
       console.log(`name: ${tempCartItem.name}, quantity=${tempCartItem.quantity} , uinitPrice=${tempCartItem.unitPrice}, subTotalPrice=${subTotalPrice}`);
-      console.log("-----")
     }
 
     console.log(`totalPrice: ${totalPriceValue.toFixed(2)}, totalQuatnity: ${totalQuantityValue}`);
+    console.log("-----")
+  }
+
+  decrementQuantity(theCartItem: CartItem) {
+
+    theCartItem.quantity --;
+
+    if(theCartItem.quantity === 0) {
+      this.remove(theCartItem);
+    }
+    else{
+      this.computeCartTotals();
+    }
+  }
+  
+  remove(theCartItem: CartItem) {
+
+    // get index of item in the array
+    const itemIndex = this.cartItems.findIndex( tempCartItem => tempCartItem.id === theCartItem.id);
+
+    // if found, remove the item from the array at given index
+    if (itemIndex > -1) {
+      this.cartItems.splice(itemIndex, 1);
+
+      this.computeCartTotals();
+    }
+
   }
 }
