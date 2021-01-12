@@ -22,6 +22,9 @@ export class CheckoutComponent implements OnInit {
 
   countries: Country[] = [];
 
+  shippingAddressStates: State[] = [];
+  billingAddressStates: State[] = [];
+
   constructor(private formBuilder: FormBuilder, 
               private luv2ShopFormService: Luv2ShopFormService) { }
 
@@ -126,6 +129,30 @@ export class CheckoutComponent implements OnInit {
       }
     );
 
+  }
+
+  getStates(formGroupName: string) {
+    const formGroup = this.checkoutFormGroup.get(formGroupName);
+
+    const countryCode = formGroup?.value.country.code;
+    const countryName = formGroup?.value.country.name;
+
+    console.log(`{formGroupName} country code: ${countryCode}`);
+    console.log(`{formGroupName} country code: ${countryName}`);
+
+    this.luv2ShopFormService.getStates(countryCode).subscribe(
+      data => {
+        if (formGroupName === "shippingAddress") {
+          this.shippingAddressStates = data;
+        }
+        else {
+          this.billingAddressStates = data;
+        }
+
+        // select the first item as default
+        formGroup?.get("state")?.setValue(data[0]);
+      }
+    )
   }
 
 }
