@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
@@ -6,7 +7,11 @@ import { Observable, of } from 'rxjs';
 })
 export class Luv2ShopFormService {
 
-  constructor() { }
+  private countriesUrl = "http://localhost:8182/api/countries";
+  private statesUrl = "http://localhost:8182/api/states";
+
+
+  constructor(private httpClient: HttpClient) { }
 
   getCreditCardMonths(startMonth: number): Observable<number[]> {   // observable return is needed, because angular components will subscribe for this
 
