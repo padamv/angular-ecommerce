@@ -123,17 +123,17 @@ export class CheckoutComponent implements OnInit {
   get lastName() { return this.checkoutFormGroup.get("customer.lastName"); }
   get email() { return this.checkoutFormGroup.get("customer.email"); }
 
-  get ShippingAddressStreet() { return this.checkoutFormGroup.get("shippingAddress.street"); }
-  get ShippingAddressCity() { return this.checkoutFormGroup.get("shippingAddress.city"); }
-  get ShippingAddressState() { return this.checkoutFormGroup.get("shippingAddress.state"); }
-  get ShippingAddressCountry() { return this.checkoutFormGroup.get("shippingAddress.country"); }
-  get ShippingAddressZipCode() { return this.checkoutFormGroup.get("shippingAddress.zipCode"); }
+  get shippingAddressStreet() { return this.checkoutFormGroup.get("shippingAddress.street"); }
+  get shippingAddressCity() { return this.checkoutFormGroup.get("shippingAddress.city"); }
+  get shippingAddressState() { return this.checkoutFormGroup.get("shippingAddress.state"); }
+  get shippingAddressCountry() { return this.checkoutFormGroup.get("shippingAddress.country"); }
+  get shippingAddressZipCode() { return this.checkoutFormGroup.get("shippingAddress.zipCode"); }
 
-  get BillingAddressStreet() { return this.checkoutFormGroup.get("billingAddress.street"); }
-  get BillingAddressCity() { return this.checkoutFormGroup.get("billingAddress.city"); }
-  get BillingAddressState() { return this.checkoutFormGroup.get("billingAddress.state"); }
-  get BillingAddressCountry() { return this.checkoutFormGroup.get("billingAddress.country"); }
-  get BillingAddressZipCode() { return this.checkoutFormGroup.get("billingAddress.zipCode"); }
+  get billingAddressStreet() { return this.checkoutFormGroup.get("billingAddress.street"); }
+  get billingAddressCity() { return this.checkoutFormGroup.get("billingAddress.city"); }
+  get billingAddressState() { return this.checkoutFormGroup.get("billingAddress.state"); }
+  get billingAddressCountry() { return this.checkoutFormGroup.get("billingAddress.country"); }
+  get billingAddressZipCode() { return this.checkoutFormGroup.get("billingAddress.zipCode"); }
 
   get creditCardType() { return this.checkoutFormGroup.get("creditCard.cardType"); }
   get creditCardNameOnCard() { return this.checkoutFormGroup.get("creditCard.nameOnCard"); }
