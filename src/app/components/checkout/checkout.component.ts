@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, NumberValueAccessor, Validators } 
 import { Event } from '@angular/router';
 import { Country } from 'src/app/common/country';
 import { State } from 'src/app/common/state';
+import { CartService } from 'src/app/services/cart.service';
 import { Luv2ShopFormService } from 'src/app/services/luv2-shop-form.service';
 import { Luv2ShopValidators } from 'src/app/validators/luv2-shop-validators';
 
@@ -27,7 +28,8 @@ export class CheckoutComponent implements OnInit {
   billingAddressStates: State[] = [];
 
   constructor(private formBuilder: FormBuilder, 
-              private luv2ShopFormService: Luv2ShopFormService) { }
+              private luv2ShopFormService: Luv2ShopFormService,
+              private cartService: CartService) { }
 
   ngOnInit(): void {
 
