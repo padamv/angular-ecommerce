@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OktaAuthService } from '@okta/okta-angular';
-//import * as OktaSignIn from "@okta/okta-signin-widget";
-const OktaSignIn = require('@okta/okta-signin-widget');
+import * as OktaSignIn from "@okta/okta-signin-widget";
+//const OktaSignIn = require('@okta/okta-signin-widget');
 import myAppConfig from "../../config/my-app-config";
 
 @Component({
