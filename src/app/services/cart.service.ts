@@ -13,7 +13,8 @@ export class CartService {
   totalPrice: Subject<number> = new BehaviorSubject<number>(0);    // 0 initial value
   totalQuantity: Subject<number> = new BehaviorSubject<number>(0);    // 0 initial value
 
-  storage: Storage = sessionStorage;
+  // storage: Storage = sessionStorage;
+  storage: Storage = localStorage;
 
   constructor() {
 
